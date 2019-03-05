@@ -1,0 +1,10 @@
+# 별도의 env 설정을 하지 않음.
+server:
+  port: 80
+
+# H2
+spring:
+  h2:
+    console:
+      enabled: true
+  mvc: static-path-pattern=/resources/**
