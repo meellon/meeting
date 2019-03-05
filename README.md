@@ -27,6 +27,35 @@ meet room example
 java -jar ./build/libs/meeting-room-1.0.1.jar
 ~~~
 
+### 프로젝트 설명
+~~~
+1. DB 구성
+    - Room        -<   Reserve
+      id                id
+      name              roomId
+      location          userName
+                        usedDate
+                        startTime
+                        endTime
+                        repeat
+                        
+2. web 페이지
+    http://127.0.0.1/web/
+
+3. web와 api 프로젝트를 서브모듈 구성으로 하지 않고 ajax를 이용한 api호출로 처리함.
+
+4. 프로젝트 폴더 구성
+    - config
+    - domain
+        reserve
+        room
+        rest
+            model
+        service
+    - helper
+    - web
+~~~
+
 ### 문제 해결
 ~~~
 1. 30분 단위 얘약
@@ -35,7 +64,7 @@ java -jar ./build/libs/meeting-room-1.0.1.jar
     - repeat 를 입력 받아 해당 횟수 만큼 iterator
     - javascript number validation 생략함
 3. 동일한 회의실 중첩 불가
-    - 저장시 Before After 쿼리로 해당 데이터베이스 질의
+    - 저장시 Before After 쿼리로 데이터베이스 질의
     - 캐시키 전략이 세워지면 캐시로 대체 가능
 4. test case
     - repository layer, controller에 대한 내용 테스트 완료.
