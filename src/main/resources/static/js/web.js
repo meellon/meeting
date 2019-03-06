@@ -123,7 +123,6 @@ var setTable = function() {
 var isIntervalTime = function(str, spliter) {
   var arrStr = str.split(spliter);
 
-  console.log(parseInt(arrStr[1], 10));
   if(parseInt(arrStr[1], 10) % 30 > 0) {
     return false;
   } else {
