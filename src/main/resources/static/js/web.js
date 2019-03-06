@@ -72,6 +72,8 @@ $(document).ready(function() {
       error: function() {
         alert("시스템 사정으로 요청하신 내용을 처리할수 없음");
       }
+    }).always(function() {
+      location.reload();
     });
     return false;
   });
@@ -121,7 +123,8 @@ var setTable = function() {
 var isIntervalTime = function(str, spliter) {
   var arrStr = str.split(spliter);
 
-  if(arrStr[1] % 30 >= 0) {
+  console.log(parseInt(arrStr[1], 10));
+  if(parseInt(arrStr[1], 10) % 30 > 0) {
     return false;
   } else {
     return true;
